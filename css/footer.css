@@ -1,19 +1,87 @@
-.footer{}
-.footer nav{}
-.footer .fnb{}
-.footer .fnb li{}
-.footer .fnb li a{}
+/* reset 중복요소가 있으므로 합치면 좋겠음 */
+/* h5와 겹침 */
+.footer .fnb li a{
+  font-size: var(--h5);
+  line-height: 160%; /* 28.8px */
+  letter-spacing: 0.18px;
+}
+.footer nav .social li a,
+.footer .fnb li a::before{
+  transition: .3s;
+}
 
-.textWrap{}
+.footer,
+.footer .fnb,
+.footer nav .social,
+.footer nav .social li a{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer{
+  padding: 0 2.81rem;
+  height: 120px;
+  margin: auto;
+}
+.footer nav{}
+.footer .fnb{
+  gap: var(--h5);
+}
+.footer .fnb li{}
+.footer .fnb li a{
+  position: relative;
+}
+.footer .fnb li a::before{
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color: var(--white);
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+}
+
+.textWrap{
+  margin: 0 5rem 0 auto;
+}
 .textWrap a{}
 .textWrap a img{}
-.textWrap a span{}
+.textWrap span{
+  margin-left: 0.5rem;
+  display: inline-block;
+  transform: translateY(0.1rem);
+}
 
-.footer .nav{}
-.footer .nav .social{}
-.footer .nav .social li{}
-.footer .nav .social li a{}
+.footer nav .social{
+  gap: 0.8rem;
+}
+.footer nav .social li{}
+.footer nav .social li a{
+  width: var(--h3);
+  height: var(--h3);
+  justify-content: center;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+}
+.footer nav .social li a i{
+  font-size: 1rem;
+}
+.footer nav .social li a img{
+  width: 80%;
+  filter: invert(1);
+}
 
 @media (hover:hover){
-
+  .footer .fnb li a:hover::before{
+    width: 100%;
+  }
+  .footer nav .social li a:hover{
+    background-color: var(--white);
+  }
+  .footer nav .social li a:hover i{
+    color: var(--bk);
+  }
+  .footer nav .social li a:hover img{
+    filter: invert(0);
+  }
 }
