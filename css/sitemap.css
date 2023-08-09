@@ -6,7 +6,7 @@
   .wrapBottom
     .heading
       h2
-    ul.category
+    ul.category.vwHead
       li
         a
         ul.depth1
@@ -19,11 +19,25 @@
 ********************/
 
 
+/* 중복 */
+.sitemap nav .category li h3,
+.sitemap .depth1{
+  border-bottom: 1px solid var(--white);
+}
+.sitemap .depth1 li a::before,
+.sitemap .depth1 li a.clickable i,
+.sitemap .depth1 li.clickable .depth2{
+  transition: .3s;
+}
+
+
 .sitemap{
   width: 100%;
 }
 
-/* 사이트맵 닫기 버튼 */
+
+/***** wrapTop 시작 *****/
+/* 사이트맵 닫기 버튼 시작 */
 .sitemap .wrapTop{
   height: 70px;
   padding: 0 40px;
@@ -47,37 +61,112 @@
 }
 .sitemap .closeBtn span:nth-child(1){transform: rotate(45deg);}
 .sitemap .closeBtn span:nth-child(2){transform: rotate(-45deg);}
+/* 사이트맵 닫기 버튼 끝 */
+/***** wrapTop 끝 *****/
 
 
+/***** wrapBottom 시작 *****/
 .wrapBottom{
   padding: 0 105px;
 }
-/* 사이트맵 헤딩 */
+
+/* 사이트맵 헤딩 시작 */
 .sitemap .heading{}
 .sitemap .heading h2{}
+/* 사이트맵 헤딩 끝 */
 
 
-/* 사이트맵 메뉴 */
+/* 사이트맵 메뉴 시작 */
 .sitemap nav{
   padding: 60px 0;
+  position: relative;
 }
-.sitemap nav .category{}
+.sitemap nav::before{
+  content: '';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: url(../img/sitemap/symbol_white.svg) no-repeat;
+  bottom: 0;
+  right: 0;
+}
+.sitemap nav .category{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.75rem;
+}
+.sitemap nav .vwHead a{
+  font-family: 'vw-head-bold', 'SUIT';
+}
 .sitemap nav .category li{}
 .sitemap nav .category li a{}
 
-/* depth1 */
-.sitemap .depth1{
-  background-color: rgba(255, 255, 255, 0.1);
-  
+.sitemap nav .category li h3{
+  border-bottom: 1px solid var(--white);
+  padding-bottom: 0.63rem;
 }
+.sitemap nav .category li h3 a{}
+/* 사이트맵 메뉴 끝 */
+
+
+/* depth1 시작 */
+.sitemap .depth1{}
 .sitemap .depth1 li{}
-.sitemap .depth1 li a{}
-.sitemap .depth1 li a i{}
+.sitemap .depth1 li a{
+  height: 50px;
+  padding: 0 0.63rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.sitemap .depth1 li a::before{
+  content: '';
+  width: 300%;
+  height: 110%;
+  position: absolute;
+  top: 50%;
+  right: 160%;
+  transform: skew(-45deg) translateY(-50%);
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.sitemap .depth1 li.clickable a{
+  justify-content: space-between;
+}
+.sitemap .depth1 li.clickable a i{
+  font-size: var(--h5);
+}
+/* depth1 끝 */
+
 
 /* depth2 */
-.sitemap .depth2{
-  border: 1px solid #00f;
-  
+.sitemap .depth1 li.clickable .depth2{
+  height: 0px;
+  overflow: hidden;
 }
-.sitemap .depth2 li{}
-.sitemap .depth2 li a{}
+.sitemap .depth1 li.clickable .depth2 li{}
+.sitemap .depth1 li.clickable .depth2 li a{
+  height: fit-content;
+  padding: 0.63rem 2rem;
+}
+
+
+/* 
+  depth2 요소가 있는 목록 요소를 클릭하면
+  'open 클래스 추가'해
+  depth2 요소 열기
+*/
+.sitemap .depth1 li.clickable.open a i{
+  transform: rotate(-180deg);
+}
+.sitemap .depth1 li.clickable.open .depth2{
+  height: max-content;
+}
+
+/* 호버 스타일 */
+@media (hover:hover){
+  .sitemap .depth1 li a:hover::before{
+    right: 0;
+  }
+}
