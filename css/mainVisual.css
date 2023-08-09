@@ -1,0 +1,27 @@
+.main{}
+.mainVisual{
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.mainVisual .scrolldownIcon{
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrolldown 1.5s ease-in-out infinite;
+}
+.mainVisual .scrolldownIcon i{
+  font-size: var(--h3);
+}
+
+.mainVisual video{}
+
+@keyframes scrolldown{
+  50%{
+    transform: translateX(-50%) translateY(0.8rem);
+  }
+}
