@@ -192,3 +192,46 @@ p{
     line-height: 185%; /* 29.6px */
     letter-spacing: 0.24px;
 }
+
+
+/***** 반응형 *****/
+@media (max-width: 768px) {
+    /* common */
+    :root{
+      /* size */
+      font-size: 14px; /* 기본 사이즈*/
+      --h1: 2.286rem; /* 32px */
+      --h2: 1.929rem; /* 27px */
+      --h3: 1.714rem; /* 24px */
+      --h4: 1.286rem; /* 18px */
+      --h5: 1.143rem; /* 16px */
+    }
+
+    h1{
+        font-size: var(--h1);
+        line-height: 150%; /* 48px */
+    }
+    h2{
+        font-size: var(--h2);
+        line-height: 153%; /* 41.31px */
+    }
+    h3{
+        font-size: var(--h3);
+        line-height: 155%; /* 37.2px */
+        letter-spacing: 0.072px;
+    }
+    h4{
+        font-size: var(--h4);
+        line-height: 160%; /* 28.8px */
+        letter-spacing: 0.18px;
+    }
+    h5{
+        font-size: var(--h5);
+        line-height: 163%; /* 26.08px */
+        letter-spacing: 0.24px;
+    }
+    p{
+        line-height: 190%; /* 26.6px */
+        letter-spacing: 0.28px;
+    }
+}
