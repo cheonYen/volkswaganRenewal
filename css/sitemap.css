@@ -25,7 +25,7 @@
   border-bottom: 1px solid var(--white);
 }
 .sitemap .depth1 li a::before,
-.sitemap .depth1 li a.clickable i,
+.sitemap .depth1 li.clickable a i,
 .sitemap .depth1 li.clickable .depth2{
   transition: .3s;
 }
@@ -142,7 +142,8 @@
 
 /* depth2 */
 .sitemap .depth1 li.clickable .depth2{
-  height: 0px;
+  height: 0;
+  padding: 0;
   overflow: hidden;
 }
 .sitemap .depth1 li.clickable .depth2 li{}
@@ -153,20 +154,85 @@
 
 
 /* 
-  depth2 요소가 있는 목록 요소를 클릭하면
-  'open 클래스 추가'해
-  depth2 요소 열기
+depth2 요소가 있는 목록 요소를 클릭하면
+'open 클래스 추가'해
+depth2 요소 열기
 */
 .sitemap .depth1 li.clickable.open a i{
   transform: rotate(-180deg);
 }
 .sitemap .depth1 li.clickable.open .depth2{
-  height: max-content;
+  padding: 0.5rem 0;
+  height: fit-content;
 }
+
 
 /* 호버 스타일 */
 @media (hover:hover){
   .sitemap .depth1 li a:hover::before{
     right: 0;
   }
+}
+
+
+/***** 반응형 *****/
+@media (max-width: 1420px) {
+  .header .mainMenu{
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  /***** wrapTop 시작 *****/
+  .sitemap .wrapTop{
+    padding: 0 var(--h5);
+    height: 60px;
+    border-bottom: 1px solid var(--white);
+  }
+  .sitemap .closeBtn{
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  /***** wrapTop 끝 *****/
+
+  /***** wrapBottom 시작 *****/
+  .wrapBottom{
+    padding: 0 var(--h5);
+  }
+
+  /* 사이트맵 헤딩 시작 */
+  .sitemap .heading{
+    display: none;
+  }
+  /* 사이트맵 헤딩 끝 */
+  
+  /* 사이트맵 메뉴 시작 */
+  .sitemap nav{
+    border: 1px solid #f00;
+    padding: var(--h5) 0;
+  }
+  .sitemap nav .category{
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: 3.75rem;
+  }
+  .sitemap nav .category li h3{
+    border: 1px solid #ff0;
+    padding: 1rem 0;
+  }
+
+
+  /* depth1 시작 */
+  .sitemap .depth1 li.clickable a i,
+  .sitemap .depth1 li.clickable .depth2{
+    display: none;
+  }
+  /* depth1 끝 */
+
+  /* depth1~2 중복 시작 */
+  .sitemap .depth1 li.clickable a i,
+  .sitemap .depth1 li.clickable .depth2{
+    display: none;
+  }
+  /* depth1~2 중복 끝 */
+  /***** wrapBottom 끝 *****/
 }
