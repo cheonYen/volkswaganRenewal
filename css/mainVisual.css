@@ -19,7 +19,9 @@
   font-size: var(--h3);
 }
 
-.mainVisual video{}
+.mainVisual video{
+  height: 100%;
+}
 
 @keyframes scrolldown{
   50%{
