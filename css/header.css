@@ -1,4 +1,12 @@
 /* reset 중복요소가 있으므로 합치면 좋겠음 */
+.vwHead{
+  font-family: 'vw-head', 'SUIT', sans-serif;
+  font-weight: 400;
+}
+.vwHeadBold{
+  font-family: 'vw-head', 'SUIT', sans-serif;
+  font-weight: 800;
+}
 /* h5와 겹침 */
 .header .mainMenu{
   font-size: var(--h5);

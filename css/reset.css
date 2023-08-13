@@ -1,11 +1,14 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'vw-head-bold'; /* 폰트 이름 */
-    src: url('../font/vw-head-bold.otf') format('opentype'); /* 폰트 파일 경로 */
-    /* 다른 형식에 대해서도 추가적인 선언 가능 */
     font-family: 'vw-head'; /* 폰트 이름 */
     src: url('../font/vw-head.otf') format('opentype'); /* 폰트 파일 경로 */
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'vw-head'; /* 폰트 이름 */
+    src: url('../font/vw-head-bold.otf') format('opentype'); /* 폰트 파일 경로 */
+    font-weight: 800;
 }
 
 

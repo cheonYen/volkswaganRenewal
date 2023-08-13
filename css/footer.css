@@ -1,21 +1,21 @@
 /* reset 중복요소가 있으므로 합치면 좋겠음 */
 /* h5와 겹침 */
-.footer .fnb li a{
+.fnb li a{
   font-size: var(--h5);
   line-height: 160%; /* 28.8px */
   letter-spacing: 0.18px;
 }
 .footer,
 .textWrap,
-.footer nav .social li a,
-.footer .fnb li a::before{
+.nav .social li a,
+.fnb li a::before{
   transition: .3s;
 }
 
 .footer,
-.footer .fnb,
-.footer nav .social,
-.footer nav .social li a{
+.fnb,
+nav .social,
+nav .social li a{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,14 +26,14 @@
   margin: auto;
 }
 .footer nav{}
-.footer .fnb{
+.fnb{
   gap: var(--h5);
 }
-.footer .fnb li{}
-.footer .fnb li a{
+.fnb li{}
+.fnb li a{
   position: relative;
 }
-.footer .fnb li a::before{
+.fnb li a::before{
   content: '';
   width: 0;
   height: 1px;
@@ -58,37 +58,37 @@
   transform: translateY(0.1rem);
 }
 
-.footer nav .social{
+nav .social{
   gap: 0.8rem;
 }
-.footer nav .social li{}
-.footer nav .social li a{
+nav .social li{}
+nav .social li a{
   width: var(--h3);
   height: var(--h3);
   justify-content: center;
   border: 1px solid var(--white);
   border-radius: 100%;
 }
-.footer nav .social li a i{
+nav .social li a i{
   font-size: 1rem;
 }
-.footer nav .social li a img{
+nav .social li a img{
   width: 80%;
   filter: invert(1);
 }
 
 /* 호버 스타일 */
 @media (hover:hover){
-  .footer .fnb li a:hover::before{
+  .fnb li a:hover::before{
     width: 100%;
   }
-  .footer nav .social li a:hover{
+  nav .social li a:hover{
     background-color: var(--white);
   }
-  .footer nav .social li a:hover i{
+  nav .social li a:hover i{
     color: var(--bk);
   }
-  .footer nav .social li a:hover img{
+  nav .social li a:hover img{
     filter: invert(0);
   }
 }
@@ -102,8 +102,8 @@
   }
 }
 @media (max-width: 1260px) {
-  .footer .fnb li:nth-child(4),
-  .footer .fnb li:nth-child(5){
+  .footer .fnb li:nth-child(2),
+  .footer .fnb li:nth-child(3){
     display: none;
   }
 }
