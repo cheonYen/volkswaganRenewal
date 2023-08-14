@@ -11,6 +11,8 @@
     font-weight: 800;
 }
 
+/* webFont 'Pretendard' */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
 
 /* Reset */
  * {outline:0 !important;}
@@ -35,7 +37,7 @@ body {
 body,input,select,textarea,button {
     border:none;
     font-size:0.88rem; /* 14px*/
-    font-family:'SUIT';
+    font-family: 'Pretendard';
     color:#fff;
 }
 h1, h2, h3, h4, h5, h6 {

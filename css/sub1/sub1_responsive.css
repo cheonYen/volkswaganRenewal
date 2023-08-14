@@ -1,0 +1,9 @@
+@media (max-width: 768px){
+  /* 중복 */
+  .howToUse,
+  .chargingMethod{
+    padding: 100px 0;
+  }
+
+
+}

@@ -1,10 +1,10 @@
 /* reset 중복요소가 있으므로 합치면 좋겠음 */
-.vwHead{
-  font-family: 'vw-head', 'SUIT', sans-serif;
+.vwHead{ /* 영문 서체 레귤러 쓸 때에는 이 클래스 추가 */
+  font-family: 'vw-head', 'Pretendard', sans-serif;
   font-weight: 400;
 }
-.vwHeadBold{
-  font-family: 'vw-head', 'SUIT', sans-serif;
+.vwHeadBold{ /* 영문 서체 볼드 쓸 때에는 이 클래스 추가 */
+  font-family: 'vw-head', 'Pretendard', sans-serif;
   font-weight: 800;
 }
 /* h5와 겹침 */
@@ -146,7 +146,7 @@
   height: 100%;
   padding: 0.3rem 0.63rem 0;
   position: relative;
-  font-family: 'VW Head', 'SUIT', sans-serif;
+  font-family: 'VW Head', 'Pretendard', sans-serif;
 }
 /* 서브메뉴 끝 */
 /***** 메뉴 끝 *****/
