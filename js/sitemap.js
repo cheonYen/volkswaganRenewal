@@ -76,9 +76,7 @@ function clickDepth1(){
 for(let c = 0; c < categoryMenu.length; c++){
   let categoryParent = categoryMenu[c].parentNode.parentNode
       categoryParentAll = document.querySelectorAll('.sitemap .category > li');
-  console.log(categoryParent);
-  console.log(categoryParentAll);
-
+  
   categoryMenu[c].addEventListener('click', function(e){
     e.preventDefault();
     if(!categoryParent.classList.contains('open')){

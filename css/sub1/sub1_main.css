@@ -23,6 +23,7 @@
   transition: .3s;
 }
 
+
 .main{}
 
 
@@ -53,6 +54,7 @@ section.headline{
   left: 0;
   z-index: 1;
 }
+
 .headline .heading h2{}
 .headline .heading p{}
 .headline .heading p i{}
@@ -76,7 +78,42 @@ section.headline{
   flex-direction: column;
   border: 1px solid var(--white);
   border-radius: 10px;
+  transform: translateY(var(--h3));
+  opacity: 0;
+  transition: ease-in-out .5s;
 }
+.orderOfUse li,
+.orderOfUse li:nth-child(2) .iconWrap,
+.orderOfUse li:nth-child(3) .iconWrap{
+  position: relative;
+}
+.orderOfUse li.animation{
+  opacity: 1;
+  transform: translateY(0);
+}
+.orderOfUse li:nth-child(1){}
+.orderOfUse li:nth-child(2),
+.orderOfUse li:nth-child(1):before{transition-delay: .3s;}
+.orderOfUse li:nth-child(3){transition-delay: .6s;}
+.orderOfUse li:nth-child(1):before,
+.orderOfUse li:nth-child(2):before{
+  content: '';
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  opacity: 0;
+  transition: 1s;
+}
+.orderOfUse li:nth-child(1):before{
+  background: url(../../img/sub1/howToUse1_car.svg) no-repeat;
+}
+.orderOfUse li.animation::before{
+  opacity: 1;
+  left: calc(100% - 100px - 5rem);
+}
+
 .orderOfUse li .textWrap{}
 .orderOfUse li .textWrap .num{
   font-size: var(--h5);
@@ -87,12 +124,47 @@ section.headline{
 .orderOfUse li .textWrap p{}
 
 .orderOfUse li .iconWrap{
-  width: 100px;
-  height: 100px;
-  /* margin: 0 0 0 auto; */
-  border-radius: 100%;
+  width: 130px;
+  height: 130px;
+  margin: 0 0 0 auto;
+}
+.orderOfUse li:nth-child(2) .iconWrap::before,
+.orderOfUse li:nth-child(2) .iconWrap::after,
+.orderOfUse li:nth-child(3) .iconWrap::before{
+  content: '';
+  position: absolute;
+}
+.orderOfUse li:nth-child(2) .iconWrap::before{
+  width: 38px;
+  height: 47px;
+  background: url(../../img/sub1/howToUse2_touch.svg) no-repeat;
+  top: 60px;
+  left: 30px;
+  z-index: 1;
+  opacity: 0;
+  transition: 1s;
+}
+.orderOfUse li:nth-child(2) .iconWrap::after{
+  width: 22px;
+  height: 22.5px;
+  background: url(../../img/sub1/howToUse2_touchBox.svg) no-repeat;
+  top: 52px;
+  left: 78px;
+  opacity: 0;
+}
+.orderOfUse li:nth-child(3) .iconWrap::before{
+  width: 15px;
+  height: 29px;
+  background: url(../../img/sub1/howToUse3_charging.svg) no-repeat;
+  top: 27px;
+  left: 105px
+}
+.orderOfUse li:nth-child(2).animation .iconWrap::after{
+  opacity: 1;
+  transition-delay: 1.4s;
 }
 .orderOfUse li .iconWrap img{}
+
 /***** 섹션1_전기차 충전 사용 끝 *****/
 
 
@@ -129,6 +201,9 @@ section.headline{
 }
 .cmContentsWrap li .imgWrap img{
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .cmContentsWrap li .desc{
@@ -161,7 +236,6 @@ section.headline{
   z-index: -1;
   background-color: var(--white);
 }
-
 /***** 섹션2_전기차 충전 방식 끝 *****/
 
 
