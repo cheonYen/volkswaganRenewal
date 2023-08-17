@@ -7,10 +7,11 @@
   <title>폭스바겐코리아 홈페이지</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="img/favicon.ico">
-  <!-- webFont 'SUIT' -->
-  <!-- <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet"> -->
   <!-- [cdn] 폰트어썸 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- [cdn] Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <!-- [css] -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/header.css">
@@ -18,6 +19,16 @@
   <link rel="stylesheet" href="css/mainVisual.css">
   <link rel="stylesheet" href="css/technology.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/model.css">
+  <link rel="stylesheet" href="css/rank.css">
+  <link rel="stylesheet" href="css/service.css">
+  <link rel="stylesheet" href="css/res_service.css">
+  <link rel="stylesheet" href="css/scroll.css">
+  <link rel="stylesheet" href="css/res_scroll.css">
+  <!-- js [cdn] -->
+  <script src="js/gsap.min.js"></script>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
 </head>
 <body>
   <div class="wrap">
@@ -427,12 +438,332 @@
     <!-- 사이트맵 끝 -->
     <!-- 메인 시작 -->
     <main class="main">
+      <!-- 메인 비주얼 시작 -->
       <section class="mainVisual">
         <div class="scrolldownIcon">
           <i class="fa fa-angle-down" aria-hidden="true"></i>
         </div>
         <video src="img/mainVisual/main_video.mp4" autoplay muted loop></video>
       </section>
+      <!-- 메인 비주얼 끝 -->
+
+      <!-- 랭킹 시작 -->
+      <section class="rank">
+        <div class="inner rank_inner">
+          <div class="rank_text">
+            <h2>폭스바겐 모델 랭킹</h2>
+            <div class="rank_textDown">
+              <p>폭스바겐 고객들이 가장 많이 구매한 모델입니다.</p>
+              <button>더보기 <i class="fa fa-angle-right"></i></button>
+            </div>
+          </div>
+          <div class="rank_wrap">
+            <div class="rank_bigCar">
+              <div class="bigCar_textBox">
+                <h2 class="rank_ranking">1</h2>
+                <div class="rank_info">
+                  <h2 class="rank_title">Tiguan Allspace</h2>
+                  <p class="rank_color">Tiguan Allspace 2.0 TDI Premium</p>
+                  <h4 class="rank_price">4890만원</h4>
+                </div>
+              </div>
+              <div class="bigCar_img"></div>
+            </div>
+            <div class="rank_tab">
+                <!-- Swiper -->
+                <div class="rank-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="rank_item">
+                        <h2 class="item_ranking">1</h2>
+                        <div class="item_imgBox item01" data-img="img/rank/rank1.png">
+                        </div>
+                        <div class="item_textBox">
+                          <p class="item_color">Tiguan Allspace 2.0 TDI Premium</p>
+                          <h4 class="item_title">Tiguan Allspace</h4>
+                          <h5 class="item_price">4890만원</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="rank_item">
+                        <h2 class="item_ranking">2</h2>
+                        <div class="item_imgBox item02" data-img="img/rank/rank2.png"></div>
+                        <div class="item_textBox">
+                          <p class="item_color">The all-electric ID.4</p>
+                          <h4 class="item_title">ID.4</h4>
+                          <h5 class="item_price">5690만원</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="rank_item">
+                        <h2 class="item_ranking">3</h2>
+                        <div class="item_imgBox item03" data-img="img/rank/rank3.png"></div>
+                        <div class="item_textBox">
+                          <p class="item_color">Touareg 3.0 TDI Prestige</p>
+                          <h4 class="item_title">Touareg</h4>
+                          <h5 class="item_price">9970만원</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="rank_item">
+                        <h2 class="item_ranking">4</h2>
+                        <div class="item_imgBox item04" data-img="img/rank/rank4.png"></div>
+                        <div class="item_textBox">
+                          <p class="item_color">Golf 8 2.0 TDI Prestige</p>
+                          <h4 class="item_title">Golf</h4>
+                          <h5 class="item_price">3990만원</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="rank_item">
+                        <h2 class="item_ranking">5</h2>
+                        <div class="item_imgBox item05" data-img="img/rank/rank5.png"></div>
+                        <div class="item_textBox">
+                          <p class="item_color">Arteon 2.0 TDI Prestige 4motion</p>
+                          <h4 class="item_title">The Arteon</h4>
+                          <h5 class="item_price">6190만원</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="rank_item">
+                        <h2 class="item_ranking">6</h2>
+                        <div class="item_imgBox item06" data-img="img/rank/rank6.png"></div>
+                        <div class="item_textBox">
+                          <p class="item_color">Jetta 1.5 TSI Premium</p>
+                          <h4 class="item_title">Zetta</h4>
+                          <h5 class="item_price">3290만원</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+            </div>
+            <div class="rank_swiper_button">
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <p class="rank_day">2023년 06월 1일 ~ 2023년 06월 30일</p>
+          </div>
+        </div>
+      </section>
+      <!-- 랭킹 끝 -->
+
+      <!-- 모델 시작 -->
+      <section class="model">
+        <!-- bg_Swiper -->
+        <div class="swiper bgSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/model/model_bg01.webp" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/model/model_bg02.webp" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/model/model_bg03.webp" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/model/model_bg04.webp" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/model/model_bg05.webp" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/model/model_bg06.webp" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="model_wrap">
+          <div class="inner model_inner">
+            <h2>폭스바겐 모델</h2>
+              <!-- titleSwiper -->
+              <div class="swiper titleSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">Touareg</div>
+                  <div class="swiper-slide">Golf_GTI</div>
+                  <div class="swiper-slide">ID.4</div>
+                  <div class="swiper-slide">Jetta</div>
+                  <div class="swiper-slide">Tiguan_Allspace</div>
+                  <div class="swiper-slide">Arteon</div>
+                  <div class="swiper-slide">Tiguan</div>
+                  <div class="swiper-slide">Golf</div>
+                </div>
+              </div>
+          </div>
+          <div class="car_swiper">
+            <!-- model_Swiper Container -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="img/model/Touareg.webp" alt="">
+                  <div class="circle tou_circle tou_front">
+                    <img src="img/model&wheel/Touareg_wheel_front.png" alt="">
+                  </div>
+                  <div class="circle tou_circle tou_end">
+                    <img src="img/model&wheel/Touareg_wheel_end.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/model/Golf_GTI.webp" alt="">
+                  <div class="circle gti_circle gti_front">
+                    <img src="img/model&wheel/Golf_GTI_wheel_front.png" alt="">
+                  </div>
+                  <div class="circle gti_circle gti_end">
+                    <img src="img/model&wheel/Golf_GTI_wheel_end.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/model/ID.4.webp" alt="">
+                  <div class="circle id4_circle id4_front">
+                    <img src="img/model&wheel/ID.4_wheel_front.png" alt="">
+                  </div>
+                  <div class="circle id4_circle id4_end">
+                    <img src="img/model&wheel/ID.4_wheel_end.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/model/Jetta.webp" alt="">
+                  <div class="circle jet_circle jet_front">
+                    <img src="img/model&wheel/Jetta_wheel_front.png" alt="">
+                  </div>
+                  <div class="circle jet_circle jet_end">
+                    <img src="img/model&wheel/Jetta_wheel_end.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/model/Tiguan_Allspace.webp" alt="">
+                  <div class="circle tia_circle tia_front">
+                    <img src="img/model&wheel/Tiguan_Allspace_wheel_front.png" alt="">
+                  </div>
+                  <div class="circle tia_circle tia_end">
+                    <img src="img/model&wheel/Tiguan_Allspace_wheel_end.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/model/Arteon.webp" alt="">
+                  <div class="circle art_circle art_front">
+                    <img src="img/model&wheel/Arteon_wheel_front.png" alt="">
+                  </div>
+                  <div class="circle art_circle art_end">
+                    <img src="img/model&wheel/Arteon_wheel_end.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/model/Tiguan.webp" alt="">
+                  <div class="circle tig_circle tig_front">
+                    <img src="img/model&wheel/Tiguan_wheel_front.png" alt="">
+                  </div>
+                  <div class="circle tig_circle tig_end">
+                    <img src="img/model&wheel/Tiguan_wheel_end.png" alt="">
+                        </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/model/Golf.webp" alt="">
+                  <div class="circle golf_circle golf_front">
+                    <img src="img/model&wheel/Golf_GTI_wheel_front.png" alt="">
+                  </div>
+                  <div class="circle golf_circle golf_end">
+                    <img src="img/model&wheel/Golf_GTI_wheel_end.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="more_btn"> 
+            <span>
+              <a href="#none">모델 상세보기 
+                <!-- <img src="img/model/rightarrow.png"/> -->
+                <div class="model_btn_arrow"></div>
+              </a>
+            </span>
+          </button>
+        </div>
+      </section>
+      <!-- 모델 끝 -->
+      
+      <!-- 스크롤 시작 -->
+      <div id="wrapper" class="main">
+        <div id="wrap">
+            <div class="container">
+                <div id="panner">
+                    <div id="sec02" class="sec02 section">
+                        <div class="sec01_2">
+                            <div class="cont_wrap">
+                                <div class="cont_box img_box">
+                                    <div class="motion_img">
+                                        <img src="img/scroll/sec02_img4.webp" alt="Rectangle 78" class="img_4">
+                                        <img src="img/scroll/sec02_img2.webp" alt="Rectangle 78" class="img_2">
+                                    </div>
+                                    <div class="motion_img">
+                                        <img src="img/scroll/sec02_img3.jpg" alt="Rectangle 78" class="img_3">
+                                        <img src="img/scroll/sec02_img1.webp" alt="Rectangle 78" class="img_1">
+                                    </div>
+                                </div>
+                                <div class="coverBox">
+                                    <div class="left_box">
+                                        <span class="cover_bg_t cover_bg"></span>
+                                        <span class="cover_bg_r cover_bg"></span>
+                                        <span class="cover_bg_b cover_bg"></span>
+                                        <span class="cover_bg_l cover_bg"></span>
+                                    </div>
+                                    <div class="right_box">
+                                        <span class="cover_bg_t cover_bg"></span>
+                                        <span class="cover_bg_r cover_bg"></span>
+                                        <span class="cover_bg_b cover_bg"></span>
+                                        <span class="cover_bg_l cover_bg"></span>
+                                    </div>
+                                </div>
+                                <div class="cont_box text_box">
+                                    <div class="left_box">
+                                        <div class="text_1 text">
+                                            <p class="txt_1 f_n">Welcome to Volkswagen</p>
+                                            <p class="txt_2 f_p">
+                                                폭스바겐 오너 여러분 환영합니다. <br>
+                                                다양한 폭스바겐 차량에 관한 정보를 이 곳에서 찾아보시기 바랍니다.<br>
+                                                <span>모두를 위한 폭스바겐. 폭스바겐의 새로운 모델과 혁신적인 기술을 경험해보세요.</span>
+                                            </p>
+                                        </div>
+                                        <div class="text_3 text">
+                                            <p class="txt_1 f_n">Quick <br>Response</p>
+                                            <p class="txt_2 f_p">
+                                                언제 어디서나 당신의 폭스바겐을 케어하겠습니다.<br>
+                                                폭스바겐이 제공하는 다양한 서비스를 경험해보세요.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="right_box">
+                                        <div class="text_2 text">
+                                            <p class="txt_1 f_n">Innovation & Technology</p>
+                                            <p class="txt_2 f_p">
+                                                폭스바겐의 혁신적인 기술은 편리하고 편안한 드라이빙을 선사합니다. <br>
+                                                보행자의 안전도 중요시하는 폭스바겐의 우수한 기술력을 경험해보세요.
+                                            </p>
+                                        </div>
+                                        <div class="text_4 text">
+                                            <p class="txt_1 f_n">All-electric Model</p>
+                                            <p class="txt_2 f_p">
+                                                여유로운 공간, 편안함, 긴 주행거리를 구현한 새로운 차원의 모빌리티를 경험해보세요.<br>
+                                                충전, 기술력, 지속가능성 등 다양한 정보를 만나보세요.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- 스크롤 끝 -->
+
+      <!-- 테크놀로지 시작 -->
       <section class="technology">
         <div class="heading">
           <h2>폭스바겐의 테크놀로지</h2>
@@ -478,6 +809,66 @@
           </li>
         </ul>
       </section>
+      <!-- 테크놀로지 끝 -->
+
+
+      <!-- 서비스 시작 -->
+      <div class="service">
+        <div class="inner service_title">
+          <h2>폭스바겐 서비스</h2>
+          <p>
+            폭스바겐 오너 여러분 환영합니다. <br />폭스바겐 차량에 관한 최적화된
+            서비스를 이 곳에서 찾아보시기 바랍니다.
+          </p>
+        </div>
+        <div class="service_container">
+          <ul>
+            <li>
+              <a href="">
+                <div class="service_text_area">
+                  <p>서비스 센터</p>
+                </div>
+                <div class="service_img_area">
+                  <div class="service_img01"></div>
+                </div>
+              </a>
+              <div class="service_btn_area">
+                <p>서비스 센터</p>
+                <div class="service_arrow"></div>
+              </div>
+            </li>
+            <li>
+              <a href="">
+                <div class="service_text_area">
+                  <p>My Volkswagen App</p>
+                </div>
+                <div class="service_img_area">
+                  <div class="service_img02"></div>
+                </div>
+              </a>
+              <div class="service_btn_area">
+                <p>My Volkswagen App</p>
+                <div class="service_arrow"></div>
+              </div>
+            </li>
+            <li>
+              <a href="">
+                <div class="service_text_area">
+                  <p>Promotion</p>
+                </div>
+                <div class="service_img_area">
+                  <div class="service_img03"></div>
+                </div>
+              </a>
+              <div class="service_btn_area">
+                <p>Promotion</p>
+                <div class="service_arrow"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 서비스 끝 -->
     </main>
     <!-- 메인 끝 -->
     <!-- 푸터 시작 -->
@@ -508,9 +899,13 @@
     <!-- 푸터 끝 -->
 
   </div>
+  
   <script src="js/header.js"></script>
   <script src="js/sitemap.js"></script>
   <script src="js/mainVisual.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/rank.js"></script>
   <script src="js/technology.js"></script>
+  <script src="js/scroll.js"></script>
 </body>
 </html>
