@@ -3,8 +3,8 @@ $(document).ready(function(){
   /* sec02 이미지 변경 */
   gsap.timeline({
       scrollTrigger: {
-          trigger: 'body',
-          start: '+='+(($('#sec02').offset().top)),
+          trigger: '#wrapper',
+          start: 'top top',
           // end: '+='+($('#sec02').outerHeight()),
           // end: '+=5000',
           end:'+='+(endPoint),

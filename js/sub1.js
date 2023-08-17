@@ -19,14 +19,15 @@ const elements = {
  * threshold: 어떤 값이나 한계점을 나타낸다. 일반적으로 특정 조건이나 상황을 판별하는 데 사용한다. updateAnimations 함수에서는 애니메이션을 활성화할 '스크롤 위치'의 임계값으로 사용한다.
 */
 function updateAnimations(scrollY, isMobile) {
+  console.log(window.scrollY);
   const animations = [
-    { target: elements.orderOfUseLi[0], threshold: isMobile ? 20 : 20 }, // isMobile일 때 20, 그 외에는 20
-    { target: elements.orderOfUseLi[1], threshold: isMobile ? 20 : 20 }, // isMobile일 때 20, 그 외에는 20
-    { target: elements.orderOfUseLi[2], threshold: isMobile ? 20 : 20 }, // isMobile일 때 20, 그 외에는 20
-    { target: elements.chargingMethodHeading, threshold: isMobile ? 500 : 500 }, // isMobile일 때 500, 그 외에는 500
-    { target: elements.cmContentsImg[0], threshold: isMobile ? 550 : 550 }, // isMobile일 때 550, 그 외에는 550
-    { target: elements.cmContentsImg[1], threshold: isMobile ? 1000 : 1000 }, // isMobile일 때 1000, 그 외에는 1000
-    { target: elements.cmContentsImg[2], threshold: isMobile ? 1500 : 1500 }, // isMobile일 때 1500, 그 외에는 1500
+    { target: elements.orderOfUseLi[0], threshold: isMobile ? 0 : 0 }, // isMobile일 때 20, 그 외에는 20
+    { target: elements.orderOfUseLi[1], threshold: isMobile ? 220 : 10 }, // isMobile일 때 20, 그 외에는 20
+    { target: elements.orderOfUseLi[2], threshold: isMobile ? 480 : 20 }, // isMobile일 때 20, 그 외에는 20
+    { target: elements.chargingMethodHeading, threshold: isMobile ? 1000 : 520 }, // isMobile일 때 500, 그 외에는 500
+    { target: elements.cmContentsImg[0], threshold: isMobile ? 1150 : 550 }, // isMobile일 때 550, 그 외에는 550
+    { target: elements.cmContentsImg[1], threshold: isMobile ? 1900 : 1000 }, // isMobile일 때 1000, 그 외에는 1000
+    { target: elements.cmContentsImg[2], threshold: isMobile ? 2500 : 1400 }, // isMobile일 때 1500, 그 외에는 1500
   ];
 
   animations.forEach(({ target, threshold }, index) => { //1)

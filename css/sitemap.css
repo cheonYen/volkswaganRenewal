@@ -271,6 +271,18 @@
   .sitemap nav .category{
     grid-template-columns: repeat(2, 1fr);
   }
+  .sitemap nav .category > li:nth-child(2){order: 2;}
+  .sitemap nav .category > li:nth-child(3){order: 5;}
+  .sitemap nav .category > li:nth-child(4){order: 6;}
+  .sitemap nav .category > li:nth-child(5){order: 7; height: 660px;}
+  .sitemap nav .category > li:nth-child(3),
+  .sitemap nav .category > li:nth-child(4){
+    height: 200px;
+  }
+  .sitemap nav .category > li:nth-child(6),
+  .sitemap nav .category > li:nth-child(7){
+    height: 500px;
+  }
 }
 @media (max-width: 768px) {
   /***** wrapTop 시작 *****/
@@ -333,6 +345,7 @@
   .sitemap nav .category > li:nth-child(3), 
   .sitemap nav .category > li:nth-child(4), 
   .sitemap nav .category > li:nth-child(5), 
+  .sitemap nav .category > li:nth-child(6), 
   .sitemap nav .category > li:nth-child(7){
     height: fit-content;
   }

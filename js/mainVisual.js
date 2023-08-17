@@ -8,7 +8,7 @@ let mediaViewWidth = window.matchMedia('(max-width: 768px)'),
 */
 function updateVideoSource() {
   if (mediaViewWidth.matches) {
-    mainVideo.setAttribute('src', "img/mainVisual/main_video-m1.mp4"); //1)
+    mainVideo.setAttribute('src', "img/mainVisual/main_video-m.mp4"); //1)
   } else {
     mainVideo.setAttribute('src', "img/mainVisual/main_video.mp4"); //2)
   }

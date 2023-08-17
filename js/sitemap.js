@@ -7,28 +7,37 @@ let hamburgerBtn = document.querySelector('.header .trigger'),
 let sitemapMenu = document.querySelectorAll('.sitemap .category > li .depth1'),
     categoryMenu = document.querySelectorAll('.sitemap .category > li h3 a');
 
+let prevScrollPosition = 0; //이전 스크롤 위치를 저장할 변수
 
-hamburgerBtn.addEventListener('click', function(){
-  change2Sitemap();
-})
-closeBtn.addEventListener('click', function(){
-  change2Sitemap();
-})
+hamburgerBtn.addEventListener('click', change2Sitemap)
+closeBtn.addEventListener('click', change2Sitemap)
+
 /** 
  * change2Sitemap
- * 1) header .trigger와 sitemap .closeBtn의 클릭이벤트를 위한 함수 선언
+ * :header .trigger와 sitemap .closeBtn의 클릭이벤트
 */
 function change2Sitemap(){
-  if(!header.classList.contains('close')){
-    header.classList.add('close');
-    main.classList.add('close');
-    footer.classList.add('close');
-    sitemap.classList.add('visible');
-  }else{
-    header.classList.remove('close');
-    main.classList.remove('close');
-    footer.classList.remove('close');
-    sitemap.classList.remove('visible');
+  let notClose = !header.classList.contains('close');
+
+  // 헤더에 'close' 클래스가 없으면 현재 스크롤 위치를 변수에 저장하고, 거짓이면 0
+  prevScrollPosition = notClose ? window.scrollY : prevScrollPosition;
+  
+
+  // 헤더에 'close' 클래스가 없으면 배열 안의 요소들에게 'close' 클래스 추가
+  [header, main, footer].forEach(Element => {
+    Element.classList.toggle('close', notClose);
+  })
+  sitemap.classList.toggle('visible', notClose);
+
+
+  //헤더에 'close' 클래스가 있으면
+  if(!notClose){
+    window.scrollTo(0, prevScrollPosition);// 저장된 이전 스크롤 위치로 자동 스크롤
+
+    if(!sitemap.classList.contains('visible')){//sitemap을 닫았을 때 
+      document.querySelectorAll('.sitemap .category > li > ul > li.clickable.open')
+        .forEach(element => element.classList.remove('open')); //열려있던 모든 토글 메뉴 닫기
+    }
   }
 }
 
@@ -45,10 +54,10 @@ clickDepth1();
 function clickDepth1(){
   for(let b = 0; b < sitemapMenu.length; b++){
     let clickableDepth1 = sitemapMenu[b].querySelectorAll('.clickable'); //1)
-  
+
     for(let bb = 0; bb < clickableDepth1.length; bb++){
-      let depth2Menu = clickableDepth1[bb].querySelector('.depth2'); //2)
-      
+      //let depth2Menu = clickableDepth1[bb].querySelector('.depth2'); 2)
+
       clickableDepth1[bb].addEventListener('click', function(e){ //3)
         e.preventDefault();
         if(!this.classList.contains('open')){ //4)
@@ -57,17 +66,17 @@ function clickDepth1(){
         }else{
           this.classList.remove('open'); //5)
         }
-  
-        /** 
-          * closeAllDepth1
-          * 0) 초기화. 모두 닫기
-        */
-        function closeAllDepth1(){
-          for(let num = 0; num < clickableDepth1.length; num++){
-              clickableDepth1[num].classList.remove('open');
-          }
-        }
       })
+    }
+
+    /** 
+      * closeAllDepth1
+      * 0) 초기화. 모두 닫기
+    */
+    function closeAllDepth1(){
+      for(let num = 0; num < clickableDepth1.length; num++){
+          clickableDepth1[num].classList.remove('open');
+      }
     }
   }
 }
@@ -90,3 +99,19 @@ for(let c = 0; c < categoryMenu.length; c++){
     }
   })
 }
+
+
+// .sitemap에 visible 클래스가 추가될 때 스크롤을 맨 위로 조정하는 함수
+function scrollToTopOnVisible() {
+  if (sitemap.classList.contains('visible')) {
+    window.scrollTo({ top: 0, behavior: 'auto' }); // 맨 위로 스크롤 (부드럽게X)
+  }
+}
+// .sitemap의 클래스 변경을 감시하고 스크롤 조정 함수 호출
+const observer = new MutationObserver(scrollToTopOnVisible);
+
+// .sitemap의 클래스 변경을 감지하기 위한 설정
+const config = { attributes: true, attributeFilter: ['class'] };
+
+// 감시를 시작하고 설정을 적용
+observer.observe(sitemap, config);
