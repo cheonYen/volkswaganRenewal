@@ -175,9 +175,12 @@ body > .wrap{
   z-index: 1;
   top: 0;
   left: 0;
-  border-bottom: 1px solid var(--white);
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
+}
+.headerBg.sub{
+  height: calc(70px + 40px);
+  border-bottom: 1px solid var(--white);
 }
 
 /* 호버 스타일 */
@@ -209,4 +212,8 @@ body > .wrap{
     height: var(--h5);
   }
   /***** 햄버거 버튼 끝 *****/
+
+  .headerBg{
+    height: 60px;
+  }
 }
