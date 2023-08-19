@@ -85,4 +85,9 @@
     height: 100%;
     width: 50%;
   }
+
+  #wrapper.main .sec01_2 .cont_wrap .coverBox,
+  #wrapper.main .sec01_2 .cont_wrap .cont_box .motion_img{
+    display: none;
+  }
 }
