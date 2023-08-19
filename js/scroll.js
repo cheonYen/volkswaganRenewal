@@ -32,11 +32,11 @@ $(document).ready(function(){
     //1)
     if(window.innerWidth < 768){
       timeline.fromTo(`${textBox} .text_1`, { opacity: 1, ease: 'none' }, { opacity: 0, ...commonOptions }, 0.5)
-      .fromTo(`${textBox} .text_2`, { opacity: 0, ease: 'none' }, { opacity: 1, ...commonOptions }, 0.5)
-      .fromTo(`${textBox} .text_2`, { opacity: 1, ease: 'none' }, { opacity: 0, ...commonOptions }, 1.5)
-      .fromTo(`${textBox} .text_3`, { opacity: 0, ease: 'none' }, { opacity: 1, ...commonOptions }, 1.5)
-      .fromTo(`${textBox} .text_3`, { opacity: 1, ease: 'none' }, { opacity: 0, ...commonOptions }, 2.0)
-      .fromTo(`${textBox} .text_4`, { opacity: 0, ease: 'none' }, { opacity: 1, ...commonOptions }, 2.0);
+      .fromTo(`${textBox} .text_2`, { opacity: 0, ease: 'none' }, { opacity: 1 }, 0.5)
+      .fromTo(`${textBox} .text_2`, { opacity: 1, ease: 'none' }, { opacity: 0 }, 1.5)
+      .fromTo(`${textBox} .text_3`, { opacity: 0, ease: 'none' }, { opacity: 1 }, 1.5)
+      .fromTo(`${textBox} .text_3`, { opacity: 1, ease: 'none' }, { opacity: 0 }, 2.0)
+      .fromTo(`${textBox} .text_4`, { opacity: 0, ease: 'none' }, { opacity: 1 }, 2.0);
     } else{
       //1번 콘텐츠 시작
       timeline.fromTo(`${leftBox}.cover_bg_t, ${leftBox}.cover_bg_b`, //완쪽 커버 top, bottom
