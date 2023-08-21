@@ -61,6 +61,14 @@ $(document).ready(function(){
       .fromTo(`${textBox} .text_2`, { opacity: 0, commonOptions2 }, { opacity: 1, ...commonOptions2 }, 0.8)
 
       .to('.motion_img .img_1', { opacity: 0, ease: 'none', duration: 0 }, 1)
+      .fromTo(`${leftBox}.cover_bg_t, ${leftBox}.cover_bg_b`, //완쪽 커버 top, bottom
+      { width: '100%', height: '0%' }, 
+      { height: '50%', ...commonOptions }, 1.5
+    )
+    .fromTo(`${leftBox}.cover_bg_r, ${leftBox}.cover_bg_l`, //왼쪽 커버 right, left
+      {width: '0%', height: '100%'}, 
+      {width: '50%',  ...commonOptions}, 1.5
+    )
       .fromTo(`${rightBox}.cover_bg_t, ${rightBox}.cover_bg_b`, //오른쪽 커버 top, bottom
         { width: '100%', height: '50%' }, 
         { height: '0%', ease: 'none' }, 1.5
@@ -69,19 +77,20 @@ $(document).ready(function(){
         { width: '0%', height: '100%' }, 
         { width: '0%', height: '100%', ease: 'none' }, 1.5
       )
-      .fromTo(`${leftBox}.cover_bg_t, ${leftBox}.cover_bg_b`, //완쪽 커버 top, bottom
-        { width: '100%', height: '0%' }, 
-        { height: '50%', ...commonOptions }, 1.5
-      )
-      .fromTo(`${leftBox}.cover_bg_r, ${leftBox}.cover_bg_l`, //왼쪽 커버 right, left
-        {width: '0%', height: '100%'}, 
-        {width: '50%',  ...commonOptions}, 1.5
-      )
+  
 
       //3번 콘텐츠 시작
       .fromTo(`${textBox} .text_2`, { opacity: 1, commonOptions2 }, { opacity: 0, ...commonOptions2 }, 1.5)
       .fromTo(`${textBox} .text_3`, { opacity: 0, commonOptions2 }, { opacity: 1, ...commonOptions2 }, 1.8)
       .to('.motion_img .img_2', { opacity: 0, ease: 'none', duration: 0 }, 2)
+      .fromTo(`${leftBox}.cover_bg_t, ${leftBox}.cover_bg_b`, //완쪽 커버 top, bottom
+      { width: '100%', height: '0%' }, 
+      { height: '0%', ...commonOptions }, 2.5
+    )
+    .fromTo(`${leftBox}.cover_bg_r, ${leftBox}.cover_bg_l`, //왼쪽 커버 right, left
+      {width: '50%', height: '100%'}, 
+      {width: '0%',  ...commonOptions}, 2.5
+    )
       .fromTo(`${rightBox}.cover_bg_t, ${rightBox}.cover_bg_b`, //오른쪽 커버 top, bottom
         { width: '100%', height: '0%' }, 
         { height: '50%', ease: 'none' }, 2.5
@@ -90,14 +99,7 @@ $(document).ready(function(){
         { width: '0%', height: '100%' }, 
         { width: '50%', height: '100%', ease: 'none' }, 2.5
       )
-      .fromTo(`${leftBox}.cover_bg_t, ${leftBox}.cover_bg_b`, //완쪽 커버 top, bottom
-        { width: '100%', height: '0%' }, 
-        { height: '0%', ...commonOptions }, 2.5
-      )
-      .fromTo(`${leftBox}.cover_bg_r, ${leftBox}.cover_bg_l`, //왼쪽 커버 right, left
-        {width: '50%', height: '100%'}, 
-        {width: '0%',  ...commonOptions}, 2.5
-      )
+   
       
       //4번 콘텐츠 시작
       .fromTo(`${textBox} .text_3`, { opacity: 1, commonOptions2 }, { opacity: 0, ...commonOptions2 }, 2.5)

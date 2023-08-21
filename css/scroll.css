@@ -58,13 +58,12 @@
 
 #wrapper.main .sec01_2 .cont_wrap .cont_box.text_box > div .text {
   position: absolute;
-  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 60px 60px 72px;
+  padding: 80px 60px 72px;
   opacity: 0;
 }
 
@@ -157,8 +156,17 @@
   height: 100%;
 }
 .f_n {
-  font-family: "vw-head", "Pretendard", sans-serif;
+  font-family: "vw-head", "SUIT", sans-serif;
 } /* font - NunitoSans */
 .f_p {
   font-family: "Pretendard", sans-serif;
 } /* font - Pretendard */
+.xbr2{display: none;}
+/* .left_box .cover_bg_t{border: 1px solid red;}
+.left_box .cover_bg_r{border: 1px solid orange;}
+.left_box .cover_bg_b{border: 1px solid blue}
+.left_box .cover_bg_l{border: 1px solid green}
+.right_box .cover_bg_t{border: 1px solid red;}
+.right_box .cover_bg_r{border: 1px solid orange;}
+.right_box .cover_bg_b{border: 1px solid blue}
+.right_box .cover_bg_l{border: 1px solid green} */

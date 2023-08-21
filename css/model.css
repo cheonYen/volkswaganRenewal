@@ -9,6 +9,9 @@
   width: 1500px;
   margin: auto;
 }
+.model_inner h2{
+  padding: 0 1rem;
+}
 .model .bgSwiper{
   position: absolute;
   height: 60%;
@@ -85,10 +88,19 @@
   0%{transform: rotate(0);}
   100%{transform: rotate(360deg);}
 } 
+
 .model .car_swiper .swiper-container .swiper-wrapper > .swiper-slide > .circle{
   position: absolute;
   z-index: 10;
-  animation: var(--a);
+}
+.model .car_swiper .swiper-container .swiper-wrapper > .swiper-slide > .circle.rota{
+  animation: rota 870ms linear;
+}
+.model .car_swiper .swiper-container .swiper-wrapper > .swiper-slide > .circle.rota_back{
+  animation: rota-back 870ms linear;
+}
+.model .car_swiper .swiper-container .swiper-wrapper > .swiper-slide > .circle.stop{
+  animation: none;
 }
 .model .car_swiper .swiper-container .swiper-wrapper > .swiper-slide > .tou_circle{
   bottom: 5.5%;
@@ -189,25 +201,36 @@
 
 .model .more_btn{
   background-color: transparent;
-  display: flex;
   padding: 18px 24px;
-  justify-content: space-around;
-  align-items: center;
   margin: 48px auto auto;
   border: 1px solid white;
   border-radius: 10px;
-  position: relative;
   transition: 0.7s;
   overflow: hidden;
   cursor: pointer;
+  display: block;
 }
 .model .more_btn span{
   color: #FFF;
   text-align: center;
   font-size: 1.13rem;
   font-weight: 600;
+  display: inline-block;
+  position: relative;
 }
-
+.model .more_btn span::before{
+  content: '';
+  position: absolute;
+  left: -600%;
+  top: -100%;
+  z-index: -1;
+  background-color: white;
+  display: block;
+  width: 321%;
+  height: 1100%;
+  transform: rotate(315deg);
+  transition: 0.5s;
+}
 .model .more_btn span a{
   display: flex;
   align-items: center;
@@ -221,42 +244,64 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.model .more_btn::before{
-  content: '';
-  position: absolute;
-  left: -400%;
-  top: 0;
-  z-index: -1;
-  background-color: white;
-  display: block;
-  width: 450%;
-  height: 450%;
-  transform: rotate(315deg);
-  transition: 0.5s;
-}
+
 
 @media (hover:hover){
   .model .more_btn:hover span a{color: black;}
   .model .more_btn:hover span a .model_btn_arrow{background-image: url(../img/model/rightarrowBlack.png);}
-  .model .more_btn:hover::before{left: -219%;}
+  .model .more_btn:hover span::before{    left: -152%;}
 }
 
 /***** 반응형 *****/
+@media (max-width: 1500px) {
+  .model_inner{width: 100%;}
+}
+@media (max-width: 1100px) {
+  .model_inner .titleSwiper .swiper-wrapper .swiper-slide-active::before, 
+  .model_inner .titleSwiper .swiper-wrapper .swiper-slide-active::after {
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
 @media (max-width: 768px) {
+  /* 추가 */
+  .model{
+    height: 100vh;
+    min-height: 750px;
+    margin: auto;
+  }
+  .model .model_wrap{
+    overflow: hidden;
+    height: inherit;
+    min-height: 750px;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .model_inner{width: 90%;}
   .model_inner h2{
     text-align: center;
-    margin-bottom: 1.3rem;
+    margin-bottom: 20vh;
   }
-  .model .bgSwiper{height: 55%;}
+  .model .bgSwiper{
+    height: 56%;
+    top: 0;
+  }
   .model_inner .titleSwiper{padding: 1rem 0;}
   .model_inner .titleSwiper .swiper-wrapper .swiper-slide{
     font-size: var(--h5);
     line-height: 163%; /* 26.08px */
     letter-spacing: 0.24px;
   }
-  .model_inner .titleSwiper .swiper-wrapper .swiper-slide::before{top: -0.5rem;}
-  .model_inner .titleSwiper .swiper-wrapper .swiper-slide::after{bottom: -0.5rem;}
+
+  .model_inner .titleSwiper .swiper-wrapper .swiper-slide-active::before, 
+  .model_inner .titleSwiper .swiper-wrapper .swiper-slide-active::after {
+    width: 100%;
+  }
   .model .car_swiper .swiper-container .swiper-wrapper{margin: 70px auto;}
   .model .car_swiper .swiper-container .swiper-wrapper .swiper-slide img{
     width: 100%;
@@ -365,11 +410,13 @@
 
   .model .more_btn{
     padding: 1rem;
-    margin-top: 6rem;
+    margin: auto auto 0;
     border: 1px solid white;
     border-radius: 5px;
-    position: relative;
+    /* position: relative; */
     transition: 0.7s;
+    width: 210px;
+    height: 50px;
   }
   .model .more_btn span{
     font-size: var(--h5);
@@ -379,26 +426,26 @@
   .model .more_btn span a{
     display: flex;
     align-items: center;
-    gap: 70px;
+    gap: 30px;
   }
   .model .more_btn span a .model_btn_arrow{
     transform: scale(0.75);
   }
-
-  .model .more_btn::before{
+  .model .more_btn span::before{
     content: '';
     position: absolute;
-    left: -400%;
-    top: 0;
+    /* left: -398%; */
+    top: -400%;
     z-index: -1;
     background-color: white;
     display: block;
-    width: 450%;
-    height: 450%;
+    /* width: 450%;
+    height: 450%; */
     transform: rotate(315deg);
     transition: 0.5s;
   }
-  .model .more_btn.click::before{left: -219%;}
+  .model .more_btn:hover span::before{    left: -122%;}
+  .model .more_btn.click::before{left: -122%;}
   /* .model .more_btn:hover::before{ left: -400%;} */
   .model .more_btn.click span a .model_btn_arrow{
     background-image: url(../img/model/rightarrowBlack.png);
@@ -411,6 +458,11 @@
 }
 
 @media (max-width: 520px) {
+  .model .bgSwiper{
+    height: 57%;
+    max-height: 490px;
+    top: 0;
+  }
   .model .car_swiper .swiper-container .swiper-wrapper .swiper-slide img{
     width: 140%;
     transform: scale(1.8);

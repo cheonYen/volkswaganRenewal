@@ -5,12 +5,12 @@
 	/* 다른 형식에 대해서도 추가적인 선언 가능 */
 	font-family: 'vw-head'; /* 폰트 이름 */
 	src: url('../font/vw-head.otf') format('opentype'); /* 폰트 파일 경로 */
-  }
+}
 
 /* rank */
 .rank{
-	/* background-color: var(--gray3); */
 	padding: 160px 0;
+	overflow-x: hidden;
 }
 .rank_inner{
 	width: 1500px;
@@ -36,11 +36,28 @@
 .rank_inner .rank_wrap .rank_bigCar{
 	position: relative;
 }
-.rank_inner .rank_wrap .rank_bigCar .bigCar_textBox{
+.rank_inner .rank_wrap .rank_bigCar .bigCar_textBox {
 	display: flex;
 	position: absolute;
 	left: 0;
 	top: 0;
+	opacity: 1;
+	transition: transform 0.3s ease, opacity 0.3s ease; 
+	/* transform 속성도 추가 */
+	/* animation: slideFromBottom 0.3s ease forwards;  */
+	/* 애니메이션 적용 */
+	animation: var(--b);
+}
+/* 애니메이션 */
+@keyframes slideFromBottom {
+	from {
+	  transform: translateY(20%);
+	  opacity: 0;
+	}
+	to {
+	  transform: translateY(0%);
+	  opacity: 1;
+	}
 }
 .rank_inner .rank_wrap .rank_bigCar .bigCar_textBox .rank_ranking{
 	margin-right: 1rem;
@@ -61,10 +78,15 @@
 	background-image: url(../img/rank/rank1.png);
 	background-repeat: no-repeat;
 	background-size: contain;
+	opacity: 1;
+	transition: opacity 0.4s ease; /* 추가: 투명도 전환 효과 */
 }
+/* 추가 */
+
+
 .rank_tab{
 	position: relative;
-  height: 440px;
+	height: 440px;
 }
 .rank-swiper {
   width: 100%;
@@ -109,11 +131,11 @@
 .rank-swiper .rank_item .item05{background-image: url(../img/rank/rank5.png);}
 .rank-swiper .rank_item .item06{background-image: url(../img/rank/rank6.png);}
 .rank_inner .rank_swiper_button{
-	position: absolute;
-	bottom: 0;
-	right: -4%;
-	width: 50px;
-	height: 100px;
+    position: absolute;
+    bottom: -13px;
+    right: -4%;
+    width: 50px;
+    height: 100px;
 }
 .rank_inner .rank_swiper_button .swiper-button-next,
 .rank_inner .rank_swiper_button .swiper-button-prev{
@@ -124,6 +146,10 @@
 	border-radius: 100%;
 	border: 1px solid white;
 	margin-top: 0;
+}
+.rank_inner .rank_swiper_button .swiper-button-next{
+	left: 0;
+    bottom: 0;
 }
 .rank_inner .rank_swiper_button .swiper-button-next::after,
 .rank_inner .rank_swiper_button .swiper-button-prev::after{font-size: 16px;}
@@ -137,13 +163,25 @@
 	top: 0;
 	left: -5%;
 }
-.rank_inner .rank_swiper_button .swiper-button-prev{top: 0;}
+.rank_inner .rank_swiper_button .swiper-button-prev{    
+	top: 10px;
+    left: 0;
+}
 .rank_inner .rank_wrap .rank_day{
 	position: absolute;
 	left: 60%;
 	bottom: -8%;
 }
 /***** 반응형 *****/
+/***** 반응형 *****/
+@media (max-width: 1500px) {
+  .rank_inner .rank_wrap .rank_bigCar .bigCar_textBox .rank_ranking{
+		margin-right: 0;
+		padding: 0 1rem;
+	}
+	.rank_inner .rank_text h2{padding: 0 1rem;}
+	.rank_inner .rank_text .rank_textDown p{padding: 0 1rem;}
+}
 @media (max-width: 768px) {
   /* common */
   :root{
@@ -159,10 +197,14 @@
 	/* rank */
 	.rank{padding: 100px 0;}
 	.rank_inner{width: 90%;}
-	.rank_inner .rank_text h2{text-align: center;}
+	.rank_inner .rank_text h2{
+		text-align: center;
+		padding: 0;
+	}
 	.rank_inner .rank_text .rank_textDown{
 		flex-direction: column;
 		text-align: center;
+		padding: 0;
 	}
 	.rank_inner .rank_text .rank_textDown button{text-align: right;}
 	.rank_inner .rank_wrap{
@@ -185,6 +227,7 @@
 	}
 	.rank_inner .rank_wrap .rank_bigCar .bigCar_textBox .rank_ranking{
 		margin-right: 0;
+		padding: 0;
 	}
 	.rank_inner .rank_wrap .rank_bigCar .bigCar_textBox .rank_info{
 		position: relative;
