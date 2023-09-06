@@ -3,14 +3,12 @@
   max-width: 1500px;
   margin: 0 auto;
 }
-body {
-  font-family: "SUIT", sans-serif;
-}
+
 /* ------------------- service ------------------------*/
 .service {
 }
 .service_title {
-  padding: 3rem 1rem;
+  padding: 130px 0 3rem;
 }
 .service_title h2 {
   font-size: var(--h2);
@@ -35,6 +33,7 @@ body {
   color: #fff;
   border-top: 0.5px solid rgba(255, 255, 255, 0.2);
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  position: relative;
 }
 .service_text_area:hover {
   background-color: #fff;
@@ -80,26 +79,47 @@ body {
   font-size: 24px;
   line-height: 320px;
 }
+.service_text_area .iconWrap{
+  width: fit-content;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 3.5rem;
+  opacity: 0;
+}
+
 .service_img_area {
   width: 70%;
   height: 100%;
   overflow: hidden;
 }
 .service_img_area .service_img01 {
-  background: url(../img/service/service01.webp) no-repeat center center;
+  background: url(../img/service/service07.jpg) no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 100%;
 }
 .service_img_area .service_img02 {
-  background: url(../img/service/service02.webp) no-repeat center center;
+  background: url(../img/service/service04.jpg) no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 100%;
 }
 .service_img_area .service_img03 {
-  background: url(../img/service/service03.webp) no-repeat center center;
+  background: url(../img/service/service05.jpg) no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 100%;
 }
+
+
+@media (hover:hover){
+  .service_container ul > li > a:hover .service_text_area .iconWrap{
+    animation: canHover 0.3s ease-in-out forwards;
+  }
+}
+@keyframes canHover{
+    100%{
+      opacity: 1;
+      right: 1.5rem;
+    }
+  }

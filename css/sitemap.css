@@ -12,7 +12,7 @@
         ul.depth1
           li 
             a
-              i
+              .iconWrap > img
             ul.depth2
               li
                 a
@@ -38,7 +38,7 @@
 .sitemap nav .category li h3 a i,
 .sitemap .depth1 li a,
 .sitemap .depth1 li a::before,
-.sitemap .depth1 li:not(.clickable) a i,
+.sitemap .depth1 li:not(.clickable) a .iconWrap,
 .sitemap .depth1 li.clickable > a > i,
 .sitemap .depth1 li.clickable .depth2,
 .sitemap .depth1 li.clickable .depth2 li a{
@@ -161,8 +161,10 @@
   z-index: -1;
   background-color: rgba(255, 255, 255, 0.2);
 }
-.sitemap .depth1 li:not(.clickable) a i{
+.sitemap .depth1 li:not(.clickable) a .iconWrap{
   margin-right: 2rem;
+  width: 1rem;
+  height: 1rem;
   opacity: 0;
 }
 
@@ -230,7 +232,7 @@
   .sitemap .depth1 li a:hover{
     background-color: rgba(255, 255, 255, 0.2);
   }
-  .sitemap .depth1 li:not(.clickable) a:hover i{
+  .sitemap .depth1 li:not(.clickable) a:hover .iconWrap{
     margin-right: 0;
     opacity: 1;
   }

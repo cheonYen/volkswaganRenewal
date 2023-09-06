@@ -1,5 +1,9 @@
 @media (max-width: 768px) {
+  .service {
+    margin-bottom: 100px;
+  }
   .service_title {
+    padding: 100px 0 45px;
     text-align: center;
   }
   .service_title p {
@@ -7,9 +11,11 @@
   .service_title p br {
     display: block;
   }
-  .service_container ul li a {
-  }
+  .service_container ul li a {}
   .service_text_area {
+    display: none;
+  }
+  .service_text_area .iconWrap{
     display: none;
   }
   .service_img_area {
@@ -32,7 +38,7 @@
   }
   .service_btn_area p {
     height: 70px;
-    padding: 0 0.63rem;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -54,6 +60,9 @@
   }
   .service_btn_area p:hover::before {
     /*right: 0; */
+  }
+  .service_container ul li:last-child {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
   }
   .service_container
   ul

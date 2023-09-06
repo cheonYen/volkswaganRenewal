@@ -63,14 +63,14 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 80px 60px 72px;
+  padding: 130px 60px 80px;
   opacity: 0;
 }
 
 #wrapper.main .sec01_2 .cont_wrap .cont_box.text_box > div .text p {
   line-height: 64px;
   font-size: 64px;
-  font-weight: 500;
+  font-weight: 800;
   color: #ffffff;
 }
 
@@ -82,7 +82,6 @@
 
 #wrapper.main .sec01_2 .cont_wrap .cont_box.text_box > div .text p.txt_2 span {
   display: block;
-  color: #30b4ff;
 }
 
 #wrapper.main .sec01_2 .cont_wrap .coverBox {
@@ -156,8 +155,8 @@
   height: 100%;
 }
 .f_n {
-  font-family: "vw-head", "SUIT", sans-serif;
-} /* font - NunitoSans */
+  font-family: "vw-head", "Pretendard", sans-serif;
+}
 .f_p {
   font-family: "Pretendard", sans-serif;
 } /* font - Pretendard */
